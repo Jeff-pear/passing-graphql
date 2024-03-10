@@ -1,0 +1,36 @@
+# Write your query or mutation here
+query {
+  wishes (filters: {
+    userMaster: {
+        createdUser: {
+          id:{
+            eq: 2
+          }
+        }
+    }
+    }) {
+    data {
+      attributes {
+        title
+        slug
+        locale
+        userMaster {
+          createdUser {
+            data {
+              attributes {
+                username
+              }
+            }
+          }
+          updatedUser {
+            data {
+              attributes {
+                username
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
